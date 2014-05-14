@@ -1,5 +1,7 @@
 #!/usr/bin/python
-#Simple script to spin a machine in EC2
+#Exercise: Rosetta one - https://github.com/jecnua/rosetta-one
+#@author <a href="mailto:jecnua@gmail.com">jecnua</a>
+#@version 1.0
 
 import boto.ec2
 import time
@@ -9,8 +11,7 @@ reservation = connection.run_instances(
 	image_id = 'ami-896c96fe',  # Ubuntu Server 13.10 (64bit)
 	instance_type = 't1.micro',
 	key_name = 'AmazonUbuntuLaptopEU',
-	#security_groups = ['default'], # No sg for this test
-	#user_data=get_script(), # No user data for this test
+	security_groups = ['rosetta-one'], #sg-10ca3275 - The Java SDK requires the id, while boto accepts the name
 )
 
 print reservation.instances #Get list of instances
@@ -28,3 +29,5 @@ if status == 'running':
     instance.add_tag("Name","Empty snowflake - Created with boto")
 else:
     print('Instance status: ' + status)
+
+print "Empty box in EC2 + TAG + SG - DONE"
