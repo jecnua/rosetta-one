@@ -1,12 +1,15 @@
 rosetta-one
 ===========
 
-Exercise: Spin an empty machine in simple EC2.
-
-Simple test with JavaSDK for AWS (first time) + boto.
+*Exercise*: Spin an empty machine in EC2 (VPC).
+Simple test done in JavaSDK for AWS / boto.
 The same steps will be implemented in both.
 
-Prerequisite: Both boto and the sdk must have the credential in place.
+Prerequisite
+------------
+Both boto and the sdk must have the credential in place.
+Boto: https://code.google.com/p/boto/wiki/BotoConfig
+aws-cli: $aws configure
 
 TODO
 ----
